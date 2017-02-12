@@ -1,9 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var axios = require('axios');
-var weather_call = require('../calls/weather_call');
-var bodyParser = require('body-parser');
-var app = express();
+
 require('dotenv').config();
 
 /* GET users listing. */
