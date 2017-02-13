@@ -23,7 +23,8 @@ router.get('/', (req, res, next) => {
     res.render('user/weather', {
      summary: weatherResults.data.minutely.summary,
      temp: weatherResults.data.currently.temperature,
-     icon: weatherResults.data.currently.icon
+     icon: weatherResults.data.currently.icon,
+     city: weatherResults.data.timezone
     })
   }).catch((err) => {console.log(err)})
 });
