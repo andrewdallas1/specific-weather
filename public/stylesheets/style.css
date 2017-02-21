@@ -2,7 +2,7 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url(../images/background.jpg);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -10,4 +10,8 @@ a {
   color: #00B7FF;
 }
 
-
+@media only screen and (max-width: 500px) {
+    body {
+        background-size: contain;
+    }
+}

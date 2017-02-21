@@ -20,6 +20,8 @@ router.get('/', (req, res, next) => {
 router.get('/', (req, res, next) => {
   axios.get('https://api.darksky.net/forecast/' + `${process.env.API_KEY}` + '/' + `${res.locals.lat}` + ',' + `${res.locals.long}`)
   .then((weatherResults) => {
+    console.log(weatherResults.data.latitude)
+    console.log(weatherResults.data.longitude)
     res.render('user/weather', {
      summary: weatherResults.data.minutely.summary,
      temp: weatherResults.data.currently.temperature,
