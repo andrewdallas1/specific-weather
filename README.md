@@ -19,7 +19,8 @@ Specific Weather is simple weather app which uses googles geolocation services a
 ###Challenges
 
 The biggest challenge for this project was getting the information from the first api to be used in the call to second. I implemented `res.locals` variables to solve this challenge like so:
-```router.get('/', (req, res, next) => {
+`
+router.get('/', (req, res, next) => {
   axios.post('https://www.googleapis.com/geolocation/v1/geolocate?key=' + `${process.env.GEO_API}`)
   .then((geoRes) => {
     res.locals.lat = geoRes.data.location.lat,
@@ -27,7 +28,8 @@ The biggest challenge for this project was getting the information from the firs
   }).then(() => {
     return next();
   })
-})```
+})
+`
 As you can see, I am using the axios node package to make the api request and the promise structure that axios provides to create the longitude and latitude variables.
 
 ####Authored by: Andrew Dallas
